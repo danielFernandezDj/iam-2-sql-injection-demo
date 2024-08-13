@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>iam-2-sql-injection-demo</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <form action="/login" method="post">
+    <div class="container">
+      <label for="Username">Username</label>
+      <input type="text" name="username" required>
+
+      <label for="Password">Password</label>
+      <input type="password" name="password" required>
+
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    if (document.location.hash === '#unauthorized') {
+      document.write('<div class=“unauthorized”>Invalid Username or Password</div>');
+    } else if (document.location.hash === '#error') {
+      document.write('<div class=“error”>An error has occured</div>');
+    }
+  </script>
+
+  <!-- <script src="/app.js" async defer></script> -->
+</body>
+
+</html>
